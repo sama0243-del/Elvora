@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>Admin Elvora</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f3f6fa;margin:0;padding:16px;color:#123b68}
+.box{max-width:640px;margin:0 auto;background:#fff;padding:18px;border-radius:12px;box-shadow:0 2px 10px #0001}
+input,textarea{width:100%;box-sizing:border-box;padding:10px;margin:6px 0 12px;border:1px solid #c9d4e2;border-radius:8px;font:inherit}
+textarea{min-height:130px}
+button{background:#123b68;color:#fff;border:0;padding:11px 18px;border-radius:8px;font:inherit;cursor:pointer}
+button.del{background:#b3261e;padding:6px 12px;font-size:.85rem}
+.item{border-top:1px solid #e3e9f1;padding:12px 0}.item small{color:#6a7b90}
+#msg{margin:8px 0;font-weight:600}
+</style></head><body><div class="box">
+<h2>Publier une annonce</h2>
+<label>Mot de passe</label><input type="password" id="pw">
+<label>Titre</label><input id="title" maxlength="150">
+<label>Texte</label><textarea id="text"></textarea>
+<button id="send">Publier</button><div id="msg"></div>
+<h3>Annonces publiées</h3><div id="list"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+$("pw").value=localStorage.getItem("elvora_pw")||"";
+async function load(){
+  const r=await fetch("/api/annonces");const l=await r.json();
+  $("list").innerHTML=l.map(p=>`<div class="item"><b>${esc(p.title)}</b><br><small>${new Date(p.date).toLocaleDateString("fr-FR")}</small>
+  <p>${esc(p.text)}</p><button class="del" onclick="del('${p.id}')">Supprimer</button></div>`).join("")||"<p>Aucune annonce.</p>";
+}
+async function call(method,url,body){
+  const pw=$("pw").value;localStorage.setItem("elvora_pw",pw);
+  const r=await fetch(url,{method,headers:{"Content-Type":"application/json","x-admin-password":pw},body:body&&JSON.stringify(body)});
+  const d=await r.json();if(!r.ok)throw new Error(d.error);return d;
+}
+$("send").onclick=async()=>{
+  try{await call("POST","/api/annonces",{title:$("title").value,text:$("text").value});
+  $("title").value=$("text").value="";$("msg").textContent="✅ Publiée !";load();}
+  catch(e){$("msg").textContent="❌ "+e.message}
+};
+async function del(id){if(!confirm("Supprimer ?"))return;
+  try{await call("DELETE","/api/annonces?id="+id);load()}catch(e){$("msg").textContent="❌ "+e.message}}
+load();
+</script></body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Elvora — équipements professionnels pour restaurants, boulangeries, pâtisseries et cafés à Conakry, Guinée. Demandez un devis sur WhatsApp.">
+  <meta name="theme-color" content="#123b68">
+  <title>Elvora | Équipements professionnels à Conakry</title>
+  <style>
+    :root{--navy:#123b68;--blue:#2169a6;--pale:#eef5fb;--ink:#172b3d;--muted:#657687;--line:#dce6ef;--white:#fff;--green:#168b55}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+    .topbar{background:var(--navy);color:#fff;font-size:13px;padding:9px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}
+    .logo{font-size:29px;font-weight:900;letter-spacing:2px;color:var(--navy)}.logo span{color:var(--blue)}
+    nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:8px;padding:12px 18px;font-weight:700;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--navy);transform:translateY(-1px)}
+    .btn-green{background:var(--green);color:#fff}.btn-outline{border:1px solid var(--line);background:#fff;color:var(--navy)}
+    .hero{background:linear-gradient(115deg,#f1f7fc 0%,#fff 65%);padding:64px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:44px}
+    .eyebrow{color:var(--blue);font-weight:800;font-size:12px;letter-spacing:1.7px;text-transform:uppercase}
+    h1{font-size:clamp(34px,4.4vw,56px);line-height:1.08;letter-spacing:-1.5px;margin:15px 0 18px;color:var(--navy)}
+    .hero p{font-size:17px;color:var(--muted);max-width:570px;margin:0 0 25px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-note{font-size:12px!important;margin-top:16px!important}
+    .hero-visual{position:relative;min-height:365px;border-radius:20px;overflow:hidden;background:#dfeaf3}
+    .hero-visual img{width:100%;height:365px;object-fit:cover;display:block}
+    .floating{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:12px;padding:14px 17px;box-shadow:0 10px 35px #15334d24;font-weight:700;color:var(--navy)}
+    .floating small{display:block;color:var(--muted);font-weight:400}
+    .trust{padding:23px 0;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .trust-item{display:flex;gap:12px;align-items:center}.trust-icon{width:42px;height:42px;border-radius:12px;background:var(--pale);display:grid;place-items:center;font-size:20px}
+    .trust-item strong{display:block;font-size:14px}.trust-item small{color:var(--muted);font-size:12px}
+    section{padding:66px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 30px}.section-head h2{font-size:clamp(26px,3vw,37px);line-height:1.15;color:var(--navy);margin:8px 0 10px}.section-head p{color:var(--muted);margin:0}
+    .filters{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin:24px 0 30px}
+    .filter{border:1px solid var(--line);background:#fff;color:var(--navy);padding:9px 15px;border-radius:999px;cursor:pointer;font-weight:700;font-size:13px}
+    .filter.active,.filter:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:.2s}
+    .product:hover{box-shadow:0 14px 35px #123b6812;transform:translateY(-3px)}
+    .product[hidden]{display:none}.product-img{height:215px;background:#f2f6f9;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .product-content{padding:18px}.category{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:var(--blue)}
+    .product h3{font-size:18px;color:var(--navy);margin:6px 0}.product p{font-size:13px;color:var(--muted);margin:0 0 16px;min-height:40px}
+    .product-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px}.price{font-size:13px;color:var(--muted);font-weight:700}.product .btn{padding:10px 12px;font-size:12px}
+    .about{background:var(--pale)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .about h2{font-size:clamp(28px,3vw,39px);line-height:1.15;color:var(--navy);margin:10px 0 16px}.about p{color:var(--muted)}
+    .about-photo{border-radius:18px;overflow:hidden;height:350px}.about-photo img{width:100%;height:100%;object-fit:cover}
+    .ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}.tick{font-size:14px;font-weight:700}.tick:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+    .contact-card{background:var(--navy);color:#fff;border-radius:20px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .contact-card h2{font-size:clamp(25px,3vw,36px);line-height:1.15;margin:0 0 10px}.contact-card p{color:#d4e2f0;margin:0}.contact-card .btn{white-space:nowrap}
+    footer{background:#0b2744;color:#d4e2f0;padding:32px 0 20px}.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-logo{font-size:25px;font-weight:900;color:#fff;letter-spacing:2px}.footer-logo span{color:#8bc4f1}
+    footer p,footer small{color:#b9cbdc;font-size:13px}.footer-bottom{border-top:1px solid #29435c;margin-top:22px;padding-top:16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:10;background:var(--green);color:#fff;border-radius:50px;padding:14px 18px;box-shadow:0 8px 24px #0002;font-weight:800}
+    @media(max-width:800px){nav a:not(.btn){display:none}.hero{padding:42px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-visual,.hero-visual img{height:285px;min-height:285px}.trust-grid{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.contact-card{align-items:flex-start;flex-direction:column;padding:30px}}
+    @media(max-width:520px){.products{grid-template-columns:1fr}.product-img{height:230px}.nav{padding:12px 0}.logo{font-size:25px}.hero p{font-size:15px}.hero-actions .btn{width:100%}.ticks{grid-template-columns:1fr}.section-head{text-align:left}.filters{justify-content:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><span>Équipements professionnels pour CHR & boulangerie</span><span>Conakry, Guinée · Service commercial sur WhatsApp</span></div></div>
+  <header><div class="wrap nav">
+    <a class="logo" href="#accueil" aria-label="Elvora accueil">ELV<span>O</span>RA</a>
+    <nav><a href="#produits">Nos équipements</a><a href="#annonces">Annonces</a><a href="#apropos">À propos</a><a href="#contact">Contact</a><a class="btn btn-primary" href="#produits">Voir le catalogue</a></nav>
+  </div></header>
+  <main>
+    <section class="hero" id="accueil"><div class="wrap hero-grid">
+      <div><div class="eyebrow">La performance au service des professionnels</div>
+        <h1>Équipez votre cuisine. Développez votre activité.</h1>
+        <p>Découvrez notre sélection d’équipements pour restaurants, boulangeries, pâtisseries et cafés à Conakry. Des solutions professionnelles pour vous aider à travailler efficacement.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#produits">Explorer les équipements <span>→</span></a><a class="btn btn-outline" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20recevoir%20votre%20catalogue." target="_blank" rel="noopener">Demander le catalogue WhatsApp</a></div>
+        <p class="hero-note">Prix et disponibilité confirmés par notre équipe commerciale.</p>
+      </div>
+      <div class="hero-visual"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1100&q=85" alt="Cuisine professionnelle moderne"><div class="floating">ELVORA<small>Équipement professionnel</small></div></div>
+    </div></section>
+    <div class="trust"><div class="wrap trust-grid">
+      <div class="trust-item"><div class="trust-icon">⚙️</div><div><strong>Matériel professionnel</strong><small>Pour les métiers de bouche</small></div></div>
+      <div class="trust-item"><div class="trust-icon">💬</div><div><strong>Conseil commercial</strong><small>Échange direct sur WhatsApp</small></div></div>
+      <div class="trust-item"><div class="trust-icon">📍</div><div><strong>Basés sur le marché guinéen</strong><small>Contactez-nous à Conakry</small></div></div>
+    </div></div>
+    <section id="produits"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Notre sélection</div><h2>Les équipements qu’il vous faut</h2><p>Parcourez les catégories et demandez un prix ou une fiche technique pour l’équipement qui vous intéresse.</p></div>
+      <div class="filters" role="group" aria-label="Filtrer les produits">
+        <button class="filter active" data-filter="all">Tout voir</button><button class="filter" data-filter="cuisson">Cuisson</button><button class="filter" data-filter="froid">Froid & présentation</button><button class="filter" data-filter="preparation">Préparation</button><button class="filter" data-filter="cafe">Café</button><button class="filter" data-filter="inox">Inox & service</button>
+      </div>
+      <div class="products">
+        <article class="product" data-category="cuisson"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=850&q=80" alt="Four et espace de cuisson professionnel"></div><div class="product-content"><div class="category">Cuisson</div><h3>Fours professionnels</h3><p>Pour boulangeries, pâtisseries, pizzerias et cuisines professionnelles.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20un%20four%20professionnel." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+        <article class="product" data-category="preparation"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=850&q=80" alt="Matériel de préparation alimentaire"></div><div class="product-content"><div class="category">Préparation</div><h3>Pétrins & mélangeurs</h3><p>Des équipements pour préparer pâtes, mélanges et préparations.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20un%20prix%20pour%20un%20p%C3%A9trin." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+        <article class="product" data-category="froid"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=850&q=80" alt="Réfrigérateur et équipements de froid"></div><div class="product-content"><div class="category">Froid & présentation</div><h3>Réfrigération & vitrines</h3><p>Saladettes, armoires positives et vitrines réfrigérées.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20un%20prix%20pour%20un%20%C3%A9quipement%20de%20froid." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+        <article class="product" data-category="cuisson"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=850&q=80" alt="Équipements de cuisine et cuisson"></div><div class="product-content"><div class="category">Cuisson</div><h3>Friteuses professionnelles</h3><p>Des solutions pour les snacks, restaurants et cuisines à fort débit.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20le%20catalogue%20des%20friteuses." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+        <article class="product" data-category="cafe"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1525610553991-2b45e5c6e8f4?auto=format&fit=crop&w=850&q=80" alt="Machine à café et café professionnel"></div><div class="product-content"><div class="category">Café</div><h3>Machines à café</h3><p>Équipez votre café, hôtel, restaurant ou espace de réception.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20des%20informations%20sur%20les%20machines%20%C3%A0%20caf%C3%A9." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+        <article class="product" data-category="inox"><div class="product-img"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=850&q=80" alt="Plan de travail et mobilier de cuisine"></div><div class="product-content"><div class="category">Inox & service</div><h3>Mobilier inox & service</h3><p>Tables, étagères, chariots et accessoires pour espaces professionnels.</p><div class="product-bottom"><span class="price">Prix sur demande</span><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20recevoir%20le%20catalogue%20inox%20et%20service." target="_blank" rel="noopener">Demander le prix</a></div></div></article>
+      </div>
+      <p style="text-align:center;color:#657687;font-size:13px;margin-top:25px">Vous cherchez un autre équipement ? <a style="color:#2169a6;font-weight:700" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20recherche%20un%20%C3%A9quipement%20professionnel." target="_blank" rel="noopener">Décrivez votre besoin sur WhatsApp.</a></p>
+    </div></section>
+    <section class="about" id="apropos"><div class="wrap about-grid">
+      <div class="about-photo"><img loading="lazy" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85" alt="Cuisine équipée et espace de travail professionnel"></div>
+      <div><div class="eyebrow">Pourquoi Elvora ?</div><h2>Un partenaire pour votre activité professionnelle</h2><p>Que vous lanciez un restaurant, développiez une boulangerie ou équipiez un café, Elvora vous aide à identifier le matériel adapté à votre projet.</p><div class="ticks"><div class="tick">Équipements variés</div><div class="tick">Conseil sur demande</div><div class="tick">Contact direct</div><div class="tick">Devis personnalisé</div></div><a class="btn btn-primary" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20discuter%20de%20mon%20projet." target="_blank" rel="noopener">Parler à un conseiller</a></div>
+    </div></section>
+    <section id="annonces" style="background:var(--pale)"><div class="wrap">
+      <div class="section-head"><span class="eyebrow">Actualités</span><h2>Annonces &amp; nouveautés</h2><p>Les dernières informations d’Elvora.</p></div>
+      <div id="annonces-list" style="max-width:760px;margin:0 auto"></div>
+    </div></section>
+    <script>
+    (async function(){
+      var box=document.getElementById("annonces-list"),sec=document.getElementById("annonces");
+      var esc=function(s){return s.replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+      try{
+        var l=await (await fetch("/api/annonces")).json();
+        if(!l.length){sec.style.display="none";return}
+        box.innerHTML=l.map(function(p){return '<article style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:18px;margin-bottom:14px"><small style="color:var(--muted)">'+new Date(p.date).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})+'</small><h3 style="margin:6px 0;color:var(--navy)">'+esc(p.title)+'</h3><p style="white-space:pre-line;margin:0">'+esc(p.text)+'</p></article>'}).join("");
+      }catch(e){sec.style.display="none"}
+    })();
+    </script>
+    <section id="contact"><div class="wrap"><div class="contact-card"><div><h2>Un projet d’équipement ? Parlons-en.</h2><p>Contactez notre équipe commerciale pour les prix, les disponibilités et les conseils.</p></div><a class="btn btn-green" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20souhaite%20parler%20%C3%A0%20un%20commercial." target="_blank" rel="noopener">Contacter Elvora sur WhatsApp ↗</a></div></div></section>
+  </main>
+  <footer><div class="wrap"><div class="footer-top"><div><div class="footer-logo">ELV<span>O</span>RA</div><p>Équipements professionnels pour restaurants,<br>boulangeries, pâtisseries et cafés.</p></div><div><strong>Contact commercial</strong><p>WhatsApp / Téléphone : +224 628 42 93 47<br>Conakry, Guinée</p></div></div><div class="footer-bottom"><small>© <span id="year"></span> Elvora. Tous droits réservés.</small><small>Catalogue en ligne · Prix et disponibilité sur demande</small></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/224628429347?text=Bonjour%20Elvora%2C%20je%20viens%20du%20site%20web." target="_blank" rel="noopener" aria-label="Contacter Elvora sur WhatsApp">☏ WhatsApp</a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const filters = document.querySelectorAll('.filter');
+    const products = document.querySelectorAll('.product');
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      const category = button.dataset.filter;
+      products.forEach(product => product.hidden = category !== 'all' && product.dataset.category !== category);
+    }));
+  </script>
+</body>
+</html>
